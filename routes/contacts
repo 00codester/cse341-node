@@ -1,0 +1,15 @@
+const express = require('express');
+const routes = express.Router();
+//const lesson1Controller = require('../controllers/lesson1');
+const contactController = require('../controllers/contacts.js');
+
+routes.get('/', contactController.getAll);
+
+routes.get('/:id', contactController.getSingle);
+
+//routes.get('/', lesson1Controller.codyRoute);
+//routes.get('/nakoa', lesson1Controller.koaRoute);
+//routes.get('/makai', lesson1Controller.kaiRoute);
+//routes.get('/emily', lesson1Controller.emRoute);
+
+module.exports = routes;
