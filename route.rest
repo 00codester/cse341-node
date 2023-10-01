@@ -1,5 +1,32 @@
 //LOCALHOST
 ###
-GET http://localhost:8080/contacts
+GET http://localhost:3000/contacts
 ###
-GET http://localhost:8080/contacts/650faf707b1b176aaaf0bc22
+GET http://localhost:3000/contacts/650faf707b1b176aaaf0bc22
+
+### create contact
+POST http://localhost:3000/contacts HTTP/1.1 
+content-type: application/json
+
+{
+    "birthday":"06/19/2000",
+    "email":"aWeaver@test.com",
+    "favoriteColor":"Brown", 
+    "firstName":"Ashley", 
+    "lastName":"Weaver"
+}
+
+### update contact
+PUT http://localhost:3000/contacts/6518f93176260ab95e799853 HTTP/1.1 
+content-type: application/json
+
+{
+    "birthday":"06/19/2000",
+    "email":"aWeaver@test.com",
+    "favoriteColor":"Orange", 
+    "firstName":"Ashley", 
+    "lastName":"Golden"
+}
+
+### delete contact
+DELETE http://localhost:3000/contacts/6518f93176260ab95e799853 HTTP/1.1

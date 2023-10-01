@@ -7,6 +7,12 @@ routes.get('/', contactController.getAll);
 
 routes.get('/:id', contactController.getSingle);
 
+//fname, lname, birthdayIn, emailIn, favColor
+//?${fnameId}&${lnameId}&${birthd}&${emailIn}&${favColor}
+routes.post('/', contactController.postContact);
+routes.put('/:id', contactController.updateContact);
+routes.delete('/:id', contactController.deleteContact);
+
 //routes.get('/', lesson1Controller.codyRoute);
 //routes.get('/nakoa', lesson1Controller.koaRoute);
 //routes.get('/makai', lesson1Controller.kaiRoute);
