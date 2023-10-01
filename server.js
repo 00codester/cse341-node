@@ -1,7 +1,5 @@
 const express = require('express');
-//const lesson1Controller = require('./controllers/lesson1');
 const mongodb = require('./db/connection.js');
-//const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -15,12 +13,8 @@ app
     next();
   })
   .use("/", require('./routes'));
- 
-// app.listen( port, () => {
-//   console.log('Web Server is listening at port ' + ( port));
-// });
 
-mongodb.initDb((err, mongodb) => {
+mongodb.initDb((err) => {
   if(err) {
     console.log(err);
   } else {

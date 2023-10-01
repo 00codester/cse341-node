@@ -1,7 +1,7 @@
 const mongodb = require('../db/connection.js');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = async(req, res, next) => {
+const getAll = async(req, res) => {
     const result = await mongodb.getDb().db().collection('contacts').find();
     result.toArray().then((lists) => {
         res.setHeader('Content-Type', 'application/json');
@@ -9,7 +9,7 @@ const getAll = async(req, res, next) => {
     });
 };
 
-const getSingle = async(req, res, next) => {
+const getSingle = async(req, res) => {
     const userId = new ObjectId(req.params.id);
     const result= await mongodb
         .getDb()
@@ -22,9 +22,7 @@ const getSingle = async(req, res, next) => {
     });
 };
 
-//fname, lname, birthdayIn, emailIn, favColor
 const postContact = async(req, res) => {
-    //const userId = new ObjectId(fname, lname, birthdayIn, email, favColor);
     const newContact = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -32,14 +30,6 @@ const postContact = async(req, res) => {
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday
     };
-    // const myDB = client.db();
-    // const myColl = myDB.collection('contacts');
-    // //birthday: birthdayIn, email: emailIn, favoriteColor: favColor, firstName: fname, lastName: lname
-    // const doc = { birthday: "12/21/18", email: "gohome@gmail.com", favoriteColor: "Violet", firstName: "Cory", lastName: "Karl" };
-    // const result = await myColl.insertOne(doc);
-    // console.log(
-    //    `A document was inserted with the _id: ${result.insertedId}`,
-    // );
     const result = await mongodb.getDb().db().collection('contacts').insertOne(newContact);
     if(result.acknowledged){
         res.status(201).json(result);
