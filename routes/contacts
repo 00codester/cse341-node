@@ -7,8 +7,6 @@ routes.get('/', contactController.getAll);
 
 routes.get('/:id', contactController.getSingle);
 
-//fname, lname, birthdayIn, emailIn, favColor
-//?${fnameId}&${lnameId}&${birthd}&${emailIn}&${favColor}
 routes.post('/', contactController.postContact);
 routes.put('/:id', contactController.updateContact);
 routes.delete('/:id', contactController.deleteContact);
