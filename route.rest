@@ -30,3 +30,37 @@ content-type: application/json
 
 ### delete contact
 DELETE http://localhost:3000/contacts/6518f93176260ab95e799853 HTTP/1.1
+
+
+//Render
+###get all
+GET https://cse341-node-u7ec.onrender.com/contacts
+###get 1
+GET https://cse341-node-u7ec.onrender.com/contacts/650faf707b1b176aaaf0bc22
+
+### create contact
+POST https://cse341-node-u7ec.onrender.com/contacts HTTP/1.1 
+content-type: application/json
+
+{
+    "birthday":"06/19/2000",
+    "email":"aWeaver@test.com",
+    "favoriteColor":"Brown", 
+    "firstName":"Ashley", 
+    "lastName":"Weaver"
+}
+
+### update contact
+PUT https://cse341-node-u7ec.onrender.com/contacts/6518f93176260ab95e799853 HTTP/1.1 
+content-type: application/json
+
+{
+    "birthday":"06/19/2000",
+    "email":"aWeaver@test.com",
+    "favoriteColor":"Orange", 
+    "firstName":"Ashley", 
+    "lastName":"Golden"
+}
+
+### delete contact
+DELETE https://cse341-node-u7ec.onrender.com/contacts/6518f93176260ab95e799853 HTTP/1.1
