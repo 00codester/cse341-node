@@ -17,7 +17,7 @@ content-type: application/json
 }
 
 ### update contact
-PUT http://localhost:3000/contacts/6518f93176260ab95e799853 HTTP/1.1 
+PUT http://localhost:3000/contacts/651908d20559e7b40d3c7d22 HTTP/1.1 
 content-type: application/json
 
 {
@@ -29,7 +29,7 @@ content-type: application/json
 }
 
 ### delete contact
-DELETE http://localhost:3000/contacts/6518f93176260ab95e799853 HTTP/1.1
+DELETE http://localhost:3000/contacts/651908d20559e7b40d3c7d22 HTTP/1.1
 
 
 //Render
@@ -63,4 +63,4 @@ content-type: application/json
 }
 
 ### delete contact
-DELETE https://cse341-node-u7ec.onrender.com/contacts/6518f93176260ab95e799853 HTTP/1.1
+DELETE https://cse341-node-u7ec.onrender.com/contacts/6519b5244b66def27198db19 HTTP/1.1
