@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
-    "description": "Description",
+    "title": "Contacts API",
+    "description": "database of contacts with information such as first name, last name, email, favorite color, and birthday hosted on mongoDb",
     "version": "1.0.0"
   },
   "host": "cse341-node-u7ec.onrender.com",
@@ -13,7 +13,7 @@
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "database of contacts with information such as first name, last name, email, favorite color, and birthday hosted on mongoDb. Has the ability to Add, Remove, Update, and Search different contacts.",
         "responses": {
           "default": {
             "description": ""
@@ -23,7 +23,7 @@
     },
     "/contacts/": {
       "get": {
-        "description": "",
+        "description": "All contacts stored within the database.",
         "produces": [
           "application/json"
         ],
@@ -34,7 +34,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Adds a new Contact into the database",
         "parameters": [
           {
             "name": "body",
@@ -43,19 +43,19 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "example": "John"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Doe"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "johndoe@gmail.com"
                 },
                 "favoriteColor": {
-                  "example": "any"
+                  "example": "Blue"
                 },
                 "birthday": {
-                  "example": "any"
+                  "example": "01/01/2001"
                 }
               }
             }
@@ -73,7 +73,7 @@
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "description": "gets a single contact from the database based off their id within the dabase",
         "produces": [
           "application/json"
         ],
@@ -92,7 +92,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Updates or changes a specified contacts information",
         "parameters": [
           {
             "name": "id",
@@ -107,19 +107,19 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "example": "John"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Doe"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "jd@gmail.com"
                 },
                 "favoriteColor": {
-                  "example": "any"
+                  "example": "Red"
                 },
                 "birthday": {
-                  "example": "any"
+                  "example": "01/01/2001"
                 }
               }
             }
@@ -135,7 +135,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Removes a contact from the database based off of their id",
         "parameters": [
           {
             "name": "id",
